@@ -18,15 +18,15 @@ import { Component } from '@angular/core'
 export class EventsListComponent {
     events = [{
         id: 1,
-        name: 'ACM First Meet',
+        name: 'Hour of Code',
         organiser: 'DJ-ACM',
         date: '14/12/2019',
         time: '2:00PM',
         price: 0,
         imageUrl: "/assets/images/angularconnect-shield.png",
         location: {
-            room: 'C1',
-            department: 'Computer Engineering',
+            address: "CNMS, Vile Parle (W)",
+            city: "Mumbai"
         }
     },
     {
@@ -37,7 +37,7 @@ export class EventsListComponent {
         time: '2:00PM',
         price: 50,
         imageUrl: "/assets/images/angularconnect-shield.png",
-        location: {
+        college_location: {
             room: 'C3',
             department: 'Computer Engineering',
         }
