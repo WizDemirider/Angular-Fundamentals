@@ -6,7 +6,7 @@ import { Component } from '@angular/core'
     <div class="container">
         <h1>Upcoming Events</h1>
         <hr>
-        <event-thumbnail (eventClick)="handleClick($event)" [College_event]="event1"></event-thumbnail>
+        <event-thumbnail [College_event]="event1"></event-thumbnail>
     </div>
     `
 })
@@ -26,7 +26,4 @@ export class EventsListComponent {
         }
     }
 
-    handleClick(e) {
-        console.log("recvd:"+e)
-    }
 }
