@@ -6,13 +6,17 @@ import { Component } from '@angular/core'
     <div class="container">
         <h1>Upcoming Events</h1>
         <hr>
-        <event-thumbnail [College_event]="event1"></event-thumbnail>
+        <div class="row">
+            <div class="col-xs-12 col-md-6" *ngFor="let event of events">
+                <event-thumbnail [College_event]="event"></event-thumbnail>
+            </div>
+        </div>
     </div>
     `
 })
 
 export class EventsListComponent {
-    event1 = {
+    events = [{
         id: 1,
         name: 'ACM First Meet',
         organiser: 'DJ-ACM',
@@ -24,6 +28,20 @@ export class EventsListComponent {
             room: 'C1',
             department: 'Computer Engineering',
         }
+    },
+    {
+        id: 2,
+        name: 'Intro to Git',
+        organiser: 'DJ-ACM',
+        date: '12/01/2020',
+        time: '2:00PM',
+        price: 50,
+        imageUrl: "/assets/images/angularconnect-shield.png",
+        location: {
+            room: 'C3',
+            department: 'Computer Engineering',
+        }
     }
+    ]
 
 }
