@@ -13,6 +13,12 @@ export class EventService {
     getEvent(id:Number) {
         return EVENTS.find(event => event.id === id)
     }
+
+    saveEvent(event) {
+        event.id = EVENTS.length
+        event.session = []
+        EVENTS.push(event)
+    }
 }
 
 const EVENTS:IEvent[] = [{
@@ -26,7 +32,8 @@ const EVENTS:IEvent[] = [{
     location: {
         address: "CNMS, Vile Parle (W)",
         city: "Mumbai"
-    }
+    },
+    sessions: []
 },
 {
     id: 2,
@@ -36,9 +43,10 @@ const EVENTS:IEvent[] = [{
     time: '2:00PM',
     price: 50,
     imageUrl: "/assets/images/angularconnect-shield.png",
-    college_location: {
+    collegeLocation: {
         room: 'C3',
         department: 'Computer Engineering',
-    }
+    },
+    sessions: []
 }
 ]

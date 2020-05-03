@@ -11,7 +11,7 @@ export interface IEvent {
         address:string
         city:string
     }
-    college_location?:
+    collegeLocation?:
     {
         room:string
         department:string

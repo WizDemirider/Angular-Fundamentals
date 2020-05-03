@@ -3,9 +3,9 @@
     <div>Date: {{College_event.date}}</div>
     <div>Time: {{College_event.time}}</div>
     <div>Price: {{College_event.price}}</div>
-    <div *ngIf="College_event.college_location">
-        Location: <span>{{College_event.college_location.room}}</span>
-        <span class="pad-left">{{College_event.college_location.department}}</span>
+    <div *ngIf="College_event.collegeLocation">
+        Location: <span>{{College_event.collegeLocation.room}}</span>
+        <span class="pad-left">{{College_event.collegeLocation.department}}</span>
     </div>
     <div *ngIf="College_event.location">
         Location: <span>{{College_event.location.address}}</span>
