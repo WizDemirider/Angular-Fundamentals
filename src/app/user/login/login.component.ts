@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   `]
 })
 export class LoginComponent implements OnInit {
-  username
-  password
+  username:string
+  password:string
 
   constructor(private authService:AuthService, private router:Router) { }
 
@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(form) {
-    console.log(form)
     this.authService.loginUser(form.userName, form.password)
     this.router.navigate(['events'])
   }
