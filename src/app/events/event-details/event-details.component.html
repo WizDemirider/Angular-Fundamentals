@@ -1,0 +1,29 @@
+<div class="container">
+  <img [src]="College_event?.imageUrl" [alt]="College_event?.name" class="event-image">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{College_event?.name}} </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div><strong>Date:</strong> {{College_event?.date}}</div>
+      <div><strong>Time:</strong> {{College_event?.time}}</div>
+      <div><strong>Price:</strong> {{College_event?.price}} rupees</div>
+    </div>
+    <div class="col-md-6">
+      <address *ngIf="College_event.location">
+        <strong>Address:</strong><br />
+        {{College_event?.location?.address}}<br />
+        {{College_event?.location?.city}}
+      </address>
+      <address *ngIf="College_event.college_location">
+        <strong>Address:</strong><br />
+        {{College_event?.college_location?.room}}<br />
+        {{College_event?.college_location?.department}}
+      </address>
+    </div>
+  </div>
+</div>
