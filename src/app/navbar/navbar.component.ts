@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     .nav.navbar-nav {font-size: 15px;}
     #searchForm {margin-right: 100px;}
     li > a.active {color: #F97924;}
-    @media(max-width: 1200px) {#searchForm {display:none}}
+    @media(max-width: 480px) {#searchForm {display:none}}
   `]
 })
 export class NavbarComponent {
