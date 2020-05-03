@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs'
+import { Subject, Observable } from 'rxjs'
+import { IEvent } from './event.model';
 
 @Injectable()
 export class EventService {
-    getEvents() {
-        let subject = new Subject()
+    getEvents():Observable<IEvent[]> {
+        let subject = new Subject<IEvent[]>()
         setTimeout(() => {subject.next(EVENTS); subject.complete(); }, 100)
         return subject
     }
@@ -14,11 +15,11 @@ export class EventService {
     }
 }
 
-const EVENTS = [{
+const EVENTS:IEvent[] = [{
     id: 1,
     name: 'Hour of Code',
     organiser: 'DJ-ACM',
-    date: '14/12/2019',
+    date: new Date('12/14/2019'),
     time: '2:00PM',
     price: 0,
     imageUrl: "/assets/images/angularconnect-shield.png",
@@ -31,7 +32,7 @@ const EVENTS = [{
     id: 2,
     name: 'Intro to Git',
     organiser: 'DJ-ACM',
-    date: '12/01/2020',
+    date: new Date('01/12/2020'),
     time: '2:00PM',
     price: 50,
     imageUrl: "/assets/images/angularconnect-shield.png",
