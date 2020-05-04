@@ -26,4 +26,18 @@
       </address>
     </div>
   </div>
+
+  <hr>
+  <div class="row" style="padding-bottom: 10px;">
+    <div class="col-xs-6 col-md-2">
+      <h2 style="margin:0">Sessions</h2>
+    </div>
+
+    <div class="col-xs-6 col-md-2">
+      <button class="btn btn-primary" style="height: 35px;" (click)="addSession()">Add Session</button>
+    </div>
+  </div>
+
+  <session-list *ngIf="!addMode" [sessions]="College_event.sessions"></session-list>
+  <create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)" (cancel)="cancelAddSession()"></create-session>
 </div>

@@ -19,6 +19,11 @@ export class EventService {
         event.session = []
         EVENTS.push(event)
     }
+
+    updateEvent(event) {
+        let index = EVENTS.findIndex(x => x.id == event.id)
+        EVENTS[index] = event
+    }
 }
 
 const EVENTS:IEvent[] = [{
@@ -33,7 +38,12 @@ const EVENTS:IEvent[] = [{
         address: "CNMS, Vile Parle (W)",
         city: "Mumbai"
     },
-    sessions: []
+    sessions: [{
+        id: 1,
+        name: "Day 1",
+        presenter: "Ankit",
+        duration: 3
+    }]
 },
 {
     id: 2,
