@@ -18,6 +18,10 @@
             <a *ngIf="!auth.isAuthenticated()" [routerLink]="['/user/login']">Login</a>
             <a *ngIf="auth.isAuthenticated()" [routerLink]="['/user/profile']">Welcome {{auth.currentUser.firstName}}</a>
           </li>
+          <li>
+
+            <a *ngIf="auth.isAuthenticated()" (click)="logout()" style="color: red;">Logout</a>
+          </li>
         </ul>
       </div>
       <form id="searchForm" (ngSubmit)="searchSessions(searchTerm)" class="navbar-form navbar-right"  >

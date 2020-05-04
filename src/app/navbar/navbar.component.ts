@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { ISession, EventService } from '../events';
+import { TOASTR_TOKEN, Toastr } from '../global-common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +18,7 @@ export class NavbarComponent {
   searchTerm: string=""
   foundSessions: ISession[]
 
-  constructor(private auth:AuthService, private eventService:EventService) {
+  constructor(private router:Router, private auth:AuthService, private eventService:EventService, @Inject(TOASTR_TOKEN) private toastr:Toastr) {
 
   }
 
@@ -26,6 +28,13 @@ export class NavbarComponent {
         this.foundSessions = sessions;
       }
     )
+  }
+
+  logout() {
+    this.auth.logout().subscribe(() => {
+      this.toastr.success("Logged out")
+      this.router.navigate(['/user/login'])
+    })
   }
 
 }
