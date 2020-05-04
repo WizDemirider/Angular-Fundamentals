@@ -30,7 +30,7 @@ export class EventDetailsComponent implements OnInit {
   saveNewSession(session:ISession) {
     session.id = Math.max.apply(null, this.College_event.sessions.map(s => s.id)) + 1
     this.College_event.sessions.push(session)
-    this.eventService.updateEvent(this.College_event)
+    this.eventService.saveEvent(this.College_event).subscribe()
     this.addMode = false
   }
 
