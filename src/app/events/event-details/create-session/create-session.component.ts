@@ -36,7 +36,7 @@ export class CreateSessionComponent implements OnInit {
     let session:ISession = {
       id: undefined,
       name: form.name,
-      duration: form.duration,
+      duration: +form.duration,
       presenter: form.presenter
     }
     this.saveNewSession.emit(session)

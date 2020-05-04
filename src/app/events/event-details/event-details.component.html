@@ -3,15 +3,15 @@
 
   <div class="row">
     <div class="col-md-11">
-      <h2>{{College_event?.name}} </h2>
+      <h2>{{College_event.organiser}} - {{College_event?.name | uppercase}} </h2>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <div><strong>Date:</strong> {{College_event?.date}}</div>
+      <div><strong>Date:</strong> {{College_event?.date | date}}</div>
       <div><strong>Time:</strong> {{College_event?.time}}</div>
-      <div><strong>Price:</strong> {{College_event?.price}} rupees</div>
+      <div><strong>Price:</strong> {{College_event?.price | currency:'INR'}}</div>
     </div>
     <div class="col-md-6">
       <address *ngIf="College_event.location">

@@ -2,7 +2,7 @@
     <h2>{{College_event.organiser}} - {{College_event.name}}</h2>
     <div>Date: {{College_event.date}}</div>
     <div>Time: {{College_event.time}}</div>
-    <div>Price: {{College_event.price}}</div>
+    <div>Price: {{College_event.price | currency:'INR' }}</div>
     <div *ngIf="College_event.collegeLocation">
         Location: <span>{{College_event.collegeLocation.room}}</span>
         <span class="pad-left">{{College_event.collegeLocation.department}}</span>
