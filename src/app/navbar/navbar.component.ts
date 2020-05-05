@@ -17,9 +17,10 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   searchTerm: string=""
   foundSessions: ISession[]
+  auth: AuthService
 
-  constructor(private router:Router, private auth:AuthService, private eventService:EventService, @Inject(TOASTR_TOKEN) private toastr:Toastr) {
-
+  constructor(private router:Router, auth:AuthService, private eventService:EventService, @Inject(TOASTR_TOKEN) private toastr:Toastr) {
+    this.auth = auth
   }
 
   searchSessions(searchTerm) {
